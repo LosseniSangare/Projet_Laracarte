@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>laracarte</title>
+    <title>{{page_title($title ?? '')}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
