@@ -13,4 +13,6 @@
 
 Route::name('home_path')->get('/', 'pageController@home');
 
-route::name("about_path")->get('/about','pageController@about');
+Route::name("about_path")->get('/about','pageController@about');
+
+Route::name('contact_path')->get('/contact','contactsController@create');
