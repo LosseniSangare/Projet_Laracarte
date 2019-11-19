@@ -1,5 +1,5 @@
 <?php
-
+use App\Mail\ContactMessageCreated;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +18,7 @@ Route::name("about_path")->get('/about','pageController@about');
 Route::name('contact_path')->get('/contact','contactsController@create');
 
 Route::name('contact_path')->post('/contact','contactsController@store');
+
+route::get('/test-mail',function(){
+  return new ContactMessageCreated('LOSSENI','loss.sangare24@gmail.com','essayons avec laravel');
+});
