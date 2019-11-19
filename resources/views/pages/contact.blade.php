@@ -10,20 +10,24 @@
           si vous rencontrez des problèmes avec ce service, veuillez <a href="https://loss.sangare24@gmail.com">demander de l'aide </a>.
         </p>
 
-        <form class="" action="#" method="post">
-          <div class="form-group">
+        <form class="" action="{{route('contact_path')}}" method="post" novalidate >
+            {{csrf_field()}}
+          <div class="form-group {{$errors->has('nom')? 'has-error' :""}}">
             <label for="nom" class="control-label">Nom</label>
             <input type="text" name="nom" class="form-control" required="required">
+            {!!$errors->first('nom','<span class="help-block">:message</span>')!!}
           </div>
 
-          <div class="form-group">
+          <div class="form-group {{$errors->has('email') ? "has-error" : ""}}">
             <label for="email" class="control-label">E-mail</label>
-            <input type="text" name="email" class="form-control"required="required">
+            <input type="email" name="email" class="form-control"required="required">
+            {!!$errors->first('email','<span class="help-block">:message</span>')!!}
           </div>
 
-          <div class="form-group">
+          <div class="form-group {{$errors->has('message')? "has-error" : ''}}">
             <label for="message" class="control-label sr-only">message</label>
             <textarea name="message" class="form-control" rows="8"cols="10"placeholder="entrez votre message" required="required"></textarea>
+            {!!$errors->first('message','<span class="help-block">:message</span>')!!}
           </div>
 
             <div class="form-group">
