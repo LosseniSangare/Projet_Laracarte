@@ -4,11 +4,11 @@
 The body of your message.
 
 <ul>
-  <li>{{$_nom}}</li>
-  <li>{{$_email}}</li>
+  <li>{{$_msg->nom}}</li>
+  <li>{{$_msg->email}}</li>
 
   @component('mail::panel')
-    {{$_msg}}
+    {{$_msg->message}}
 @endcomponent
 
 

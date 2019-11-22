@@ -11,6 +11,7 @@
         </p>
 
         <form class="" action="{{route('contact_path')}}" method="post" >
+          {{-- permet de reconnaitre la route du formulaire --}}
             {{csrf_field()}}
           <div class="form-group {{$errors->has('nom')? 'has-error' :""}}">
             <label for="nom" class="control-label">Nom</label>
