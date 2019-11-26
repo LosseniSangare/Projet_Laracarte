@@ -22,7 +22,7 @@ class contactsController extends Controller
       $mailable = new ContactMessageCreated($message);
       Mail::to('loss.sangare24@gmail.com')->send($mailable);
       flashy()->success('message envoyé avec succès');
-      return redirect()->route('home_path');
+      return redirect()->route('home');
     }
 
 
