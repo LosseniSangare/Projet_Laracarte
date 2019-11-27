@@ -11,17 +11,14 @@ use App\Mail\ContactMessageCreated;
 |
 */
 
-// Route::name('home_path')->get('/', 'pageController@home');
-// Route::name("about_path")->get('/about','pageController@about');
+Route::name('home_path')->get('/', 'pageController@home');
 
-Route::view('/','pages.home')->name('home');
+Route::name("about_path")->get('/about','pageController@about');
 
-Route::view('/about_path','pages.about')->name('about');
+Route::name('contact_path')->get('/contact','contactsController@create');
 
-Route::get('/contact','contactsController@create')->name('contact.create');
+Route::name('contact_path')->post('/contact','contactsController@store');
 
-Route::post('/contact','contactsController@store')->name('contact.store');
-
-Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
+route::get('/test-mail',function(){
+  return new ContactMessageCreated('LOSSENI','loss.sangare24@gmail.com','essayons avec laravel');
+});
