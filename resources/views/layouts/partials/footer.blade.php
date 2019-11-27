@@ -1,5 +1,5 @@
 
-<footer class="text-center pyd -5">
+<footer class="text-center">
   <p>
     &copy; {{ date('Y') }} &middot; Laracarte <a href="https://twitter.com">twitter</a>
   </p>
