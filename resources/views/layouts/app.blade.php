@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+  <!DOCTYPE html>
+=======
 <!DOCTYPE html>
+>>>>>>> parent of a9cbfd6... Revert "authentification"
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
