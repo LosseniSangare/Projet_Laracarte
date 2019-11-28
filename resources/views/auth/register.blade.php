@@ -11,13 +11,29 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
+                    {{--****************** champ nom*********************--}}
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="nom" class="col-md-4 col-form-label text-md-right">{{ __('nom') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="nom" type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{ old('nom') }}" required autocomplete="nom" autofocus>
 
-                                @error('name')
+                                @error('nom')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
+                         {{--****************** champ prenoms*********************--}}
+                        <div class="form-group row">
+                            <label for="prenoms" class="col-md-4 col-form-label text-md-right">{{ __('prenoms') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="prenoms" type="text" class="form-control @error('prenoms') is-invalid @enderror" name="prenoms" value="{{ old('prenoms') }}" required autocomplete="prenoms" autofocus>
+
+                                @error('prenoms')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -25,8 +41,24 @@
                             </div>
                         </div>
 
+            {{--****************** champ utilisateur *********************--}}
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="utilisateur" class="col-md-4 col-form-label text-md-right">{{ __('utilisateur') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="utilisateur" type="text" class="form-control @error('utilisateur') is-invalid @enderror" name="utilisateur" value="{{ old('utilisateur') }}" required autocomplete="utilisateur" autofocus>
+
+                                @error('utilisateur')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Adresse E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
